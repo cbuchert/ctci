@@ -8,3 +8,7 @@ export function urlEncodeSpaceCharacters(string = "") {
 
   return urlEncodedString;
 }
+
+export function urlEncodeSpaceCharacters_withArray(string = "") {
+  return [ ...string ].map(character => character === " " ? "%20" : character).join("");
+}
