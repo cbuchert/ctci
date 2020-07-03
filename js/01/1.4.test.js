@@ -14,16 +14,16 @@ const testSuite = (urlEncode) => {
       assertEquals(urlEncode("a"), "a");
     });
 
-    it("url encodes a single space character.", () => {
-      assertEquals(urlEncode(" "), "%20");
-    });
-
     it("url encodes a single space before another character.", () => {
       assertEquals(urlEncode(" a"), "%20a");
     });
 
     it("url encodes spaces in a string.", () => {
       assertEquals(urlEncode("Oh long Johnson."), "Oh%20long%20Johnson.");
+    });
+
+    it("doesn't url encode trailing spaces.", () => {
+      assertEquals(urlEncode("a b "), "a%20b");
     });
   });
 };
